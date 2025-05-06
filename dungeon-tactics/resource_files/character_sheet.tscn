@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtoe4ghreh13a"]
+
+[ext_resource type="Script" uid="uid://qkfaubruvbpy" path="res://character_sheet.gd" id="1_2rtxg"]
+[ext_resource type="PackedScene" uid="uid://g8haith7212p" path="res://character_sheet_components/stat_column.tscn" id="2_afg6s"]
+[ext_resource type="PackedScene" uid="uid://vlhygmbp4naf" path="res://character_sheet_components/basic_information.tscn" id="2_mqxtd"]
+
+[node name="Character_Sheet" type="Node"]
+script = ExtResource("1_2rtxg")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Basic_Information" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_mqxtd")]
+layout_mode = 2
+
+[node name="Stat_Column" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_afg6s")]
+unique_name_in_owner = true
+layout_mode = 2

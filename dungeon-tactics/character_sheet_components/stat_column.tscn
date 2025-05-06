@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=3 uid="uid://g8haith7212p"]
+
+[ext_resource type="Texture2D" uid="uid://gv4yath7qju2" path="res://images/stat_column_9rect.png" id="1_u83fi"]
+[ext_resource type="Script" uid="uid://d0fb5nd5rr4n3" path="res://character_sheet_components/stat_column.gd" id="2_f0ipp"]
+[ext_resource type="PackedScene" uid="uid://cagqquxfs0w6b" path="res://character_sheet_components/attribute_block.tscn" id="2_q8ml3"]
+
+[node name="Stat_Column" type="NinePatchRect"]
+custom_minimum_size = Vector2(670, 130)
+offset_right = 32.0
+offset_bottom = 32.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_u83fi")
+region_rect = Rect2(0, 0, 96, 96)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+script = ExtResource("2_f0ipp")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="strength" parent="MarginContainer/HBoxContainer" instance=ExtResource("2_q8ml3")]
+unique_name_in_owner = true
+layout_mode = 2
+attribute = "Strength"
+
+[node name="dexterity" parent="MarginContainer/HBoxContainer" instance=ExtResource("2_q8ml3")]
+unique_name_in_owner = true
+layout_mode = 2
+attribute = "Dexterity"
+
+[node name="constitution" parent="MarginContainer/HBoxContainer" instance=ExtResource("2_q8ml3")]
+unique_name_in_owner = true
+layout_mode = 2
+attribute = "Constitution"
+
+[node name="intelligence" parent="MarginContainer/HBoxContainer" instance=ExtResource("2_q8ml3")]
+unique_name_in_owner = true
+layout_mode = 2
+attribute = "Intelligence"
+
+[node name="wisdom" parent="MarginContainer/HBoxContainer" instance=ExtResource("2_q8ml3")]
+unique_name_in_owner = true
+layout_mode = 2
+attribute = "Wisdom"
+
+[node name="charisma" parent="MarginContainer/HBoxContainer" instance=ExtResource("2_q8ml3")]
+unique_name_in_owner = true
+layout_mode = 2
+attribute = "Charisma"

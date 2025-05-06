@@ -1,0 +1,89 @@
+[gd_scene load_steps=3 format=3 uid="uid://cagqquxfs0w6b"]
+
+[ext_resource type="Texture2D" uid="uid://c58drm7k57w3v" path="res://images/stat_attribute_9rect.png" id="1_rcwma"]
+[ext_resource type="Script" uid="uid://b20k812vg2ve2" path="res://character_sheet_components/attribute_block.gd" id="2_qd7c1"]
+
+[node name="Attribute_Block" type="NinePatchRect"]
+custom_minimum_size = Vector2(100, 110)
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 103.0
+offset_bottom = 117.0
+texture = ExtResource("1_rcwma")
+region_rect = Rect2(0, 0, 96, 96)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+script = ExtResource("2_qd7c1")
+attribute = "test"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 103.0
+offset_bottom = 117.0
+
+[node name="Vertical_Box" type="VBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(100, 110)
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="attribute_name" type="Label" parent="MarginContainer/Vertical_Box"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "Test"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="attribute_input" type="LineEdit" parent="MarginContainer/Vertical_Box"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="attribute_modifer" type="Label" parent="MarginContainer/Vertical_Box"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="attribute_modifer_label" type="Label" parent="MarginContainer/Vertical_Box"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "Test Modifier"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Vertical_Box"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="profcient_save" type="CheckBox" parent="MarginContainer/Vertical_Box/HBoxContainer"]
+layout_mode = 2
+
+[node name="save_label" type="Label" parent="MarginContainer/Vertical_Box/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "Save"
+
+[node name="save_modifer" type="Label" parent="MarginContainer/Vertical_Box/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "+0"

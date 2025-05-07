@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c58drm7k57w3v" path="res://images/stat_attribute_9rect.png" id="1_rcwma"]
 [ext_resource type="Script" uid="uid://b20k812vg2ve2" path="res://character_sheet_components/attribute_block.gd" id="2_qd7c1"]
 
-[node name="Attribute_Block" type="NinePatchRect"]
+[node name="Attribute_Block" type="NinePatchRect" groups=["attributes"]]
 custom_minimum_size = Vector2(100, 110)
 offset_left = 5.0
 offset_top = 5.0

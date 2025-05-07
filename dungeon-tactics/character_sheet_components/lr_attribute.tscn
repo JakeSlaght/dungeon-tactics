@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpgsy0vx8oce6"]
+
+[ext_resource type="Texture2D" uid="uid://c58drm7k57w3v" path="res://images/stat_attribute_9rect.png" id="1_5ttdo"]
+[ext_resource type="Script" uid="uid://cqr24254htbji" path="res://character_sheet_components/lr_attribute.gd" id="2_mucuu"]
+
+[node name="LRAttribute" type="NinePatchRect" groups=["lr_attributes"]]
+custom_minimum_size = Vector2(100, 110)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_5ttdo")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+script = ExtResource("2_mucuu")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 103.0
+offset_bottom = 117.0
+
+[node name="Vertical_Box" type="VBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(100, 110)
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="attribute_name" type="Label" parent="MarginContainer/Vertical_Box"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "Proficiency Bonus"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="attribute_modifer" type="Label" parent="MarginContainer/Vertical_Box"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="attribute_modifer_label" type="Label" parent="MarginContainer/Vertical_Box"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "Feet"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 0

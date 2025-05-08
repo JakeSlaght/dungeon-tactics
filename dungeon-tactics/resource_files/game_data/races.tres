@@ -1,0 +1,229 @@
+[gd_resource type="Resource" script_class="GameData" load_steps=28 format=3 uid="uid://bcrd5jkcrldxa"]
+
+[ext_resource type="Script" uid="uid://b7gu2yy5wj4k1" path="res://resource_files/classes/class.gd" id="1"]
+[ext_resource type="Script" uid="uid://cdxmblgpyqyui" path="res://resource_files/game_data/data_containers/game_data.gd" id="2"]
+[ext_resource type="Script" uid="uid://dsc7i1pkadqsn" path="res://resource_files/classes/skill.gd" id="2_lnbn2"]
+[ext_resource type="Script" uid="uid://cvg3sh6pne2du" path="res://resource_files/races/race.gd" id="3"]
+[ext_resource type="Script" uid="uid://cj8x6ooejv3dp" path="res://resource_files/classes/proficiency.gd" id="3_oc21v"]
+[ext_resource type="Script" uid="uid://1lmrv0of4vqn" path="res://resource_files/classes/saving_throw.gd" id="4_x7krh"]
+
+[sub_resource type="Resource" id="c1"]
+script = ExtResource("1")
+name = "Barbarian"
+required_stat = "Strength"
+hit_die = 12
+proficiencies = Array[ExtResource("3_oc21v")]([])
+saving_throws = Array[ExtResource("4_x7krh")]([])
+skills = Array[ExtResource("2_lnbn2")]([])
+equipment = ["Greataxe", "Handaxe x2", "Explorer's Pack", "Javelin x4"]
+multi_class_requirements = Array[ExtResource("2_lnbn2")]([])
+flavor_text = "A fierce warrior of primitive background who can enter a battle rage."
+
+[sub_resource type="Resource" id="c2"]
+script = ExtResource("1")
+name = "Bard"
+required_stat = "Charisma"
+hit_die = 8
+proficiencies = Array[ExtResource("3_oc21v")]([])
+saving_throws = Array[ExtResource("4_x7krh")]([])
+skills = Array[ExtResource("2_lnbn2")]([])
+equipment = ["Rapier", "Diplomat's Pack", "Lute", "Leather Armor", "Dagger"]
+multi_class_requirements = Array[ExtResource("2_lnbn2")]([])
+flavor_text = "An inspiring magician whose power echoes the music of creation."
+
+[sub_resource type="Resource" id="c3"]
+script = ExtResource("1")
+name = "Cleric"
+required_stat = "Wisdom"
+hit_die = 8
+proficiencies = Array[ExtResource("3_oc21v")]([])
+saving_throws = Array[ExtResource("4_x7krh")]([])
+skills = Array[ExtResource("2_lnbn2")]([])
+equipment = ["Mace", "Scale Mail", "Light Crossbow", "Priest's Pack", "Shield", "Holy Symbol"]
+multi_class_requirements = Array[ExtResource("2_lnbn2")]([])
+flavor_text = "A priestly champion who wields divine magic in service of a higher power."
+
+[sub_resource type="Resource" id="c4"]
+script = ExtResource("1")
+name = "Druid"
+required_stat = "Wisdom"
+hit_die = 8
+proficiencies = Array[ExtResource("3_oc21v")]([])
+saving_throws = Array[ExtResource("4_x7krh")]([])
+skills = Array[ExtResource("2_lnbn2")]([])
+equipment = ["Wooden Shield", "Scimitar", "Explorer's Pack", "Druidic Focus"]
+multi_class_requirements = Array[ExtResource("2_lnbn2")]([])
+flavor_text = "A priest of the Old Faith, wielding the powers of nature and adopting animal forms."
+
+[sub_resource type="Resource" id="c5"]
+script = ExtResource("1")
+name = "Fighter"
+required_stat = "Strength"
+hit_die = 10
+proficiencies = Array[ExtResource("3_oc21v")]([])
+saving_throws = Array[ExtResource("4_x7krh")]([])
+skills = Array[ExtResource("2_lnbn2")]([])
+equipment = ["Chain Mail", "Longsword", "Shield"]
+multi_class_requirements = Array[ExtResource("2_lnbn2")]([])
+flavor_text = "A master of martial combat, skilled with a variety of weapons and armor."
+
+[sub_resource type="Resource" id="c6"]
+script = ExtResource("1")
+name = "Monk"
+required_stat = "Dexterity"
+hit_die = 8
+proficiencies = Array[ExtResource("3_oc21v")]([])
+saving_throws = Array[ExtResource("4_x7krh")]([])
+skills = Array[ExtResource("2_lnbn2")]([])
+equipment = ["Shortsword", "Dungeoneer's Pack"]
+multi_class_requirements = Array[ExtResource("2_lnbn2")]([])
+flavor_text = "A master of martial arts, skilled in unarmed combat and agile movements."
+
+[sub_resource type="Resource" id="c7"]
+script = ExtResource("1")
+name = "Paladin"
+required_stat = "Strength"
+hit_die = 10
+proficiencies = Array[ExtResource("3_oc21v")]([])
+saving_throws = Array[ExtResource("4_x7krh")]([])
+skills = Array[ExtResource("2_lnbn2")]([])
+equipment = ["Chain Mail", "Longsword", "Shield", "Holy Symbol"]
+multi_class_requirements = Array[ExtResource("2_lnbn2")]([])
+flavor_text = "A holy warrior bound by an oath to protect the weak and uphold justice."
+
+[sub_resource type="Resource" id="c8"]
+script = ExtResource("1")
+name = "Ranger"
+required_stat = "Dexterity"
+hit_die = 10
+proficiencies = Array[ExtResource("3_oc21v")]([])
+saving_throws = Array[ExtResource("4_x7krh")]([])
+skills = Array[ExtResource("2_lnbn2")]([])
+equipment = ["Leather Armor", "Longbow", "Shortsword", "Explorer's Pack"]
+multi_class_requirements = Array[ExtResource("2_lnbn2")]([])
+flavor_text = "A master of the wilderness, skilled in tracking, survival, and ranged combat."
+
+[sub_resource type="Resource" id="c9"]
+script = ExtResource("1")
+name = "Rogue"
+required_stat = "Dexterity"
+hit_die = 8
+proficiencies = Array[ExtResource("3_oc21v")]([])
+saving_throws = Array[ExtResource("4_x7krh")]([])
+skills = Array[ExtResource("2_lnbn2")]([])
+equipment = ["Shortsword", "Dagger", "Leather Armor", "Thieves' Tools"]
+multi_class_requirements = Array[ExtResource("2_lnbn2")]([])
+flavor_text = "A stealthy trickster, skilled in the arts of deception, thievery, and agility."
+
+[sub_resource type="Resource" id="c10"]
+script = ExtResource("1")
+name = "Sorcerer"
+required_stat = "Charisma"
+hit_die = 6
+proficiencies = Array[ExtResource("3_oc21v")]([])
+saving_throws = Array[ExtResource("4_x7krh")]([])
+skills = Array[ExtResource("2_lnbn2")]([])
+equipment = ["Light Crossbow", "Component Pouch", "Dungeoneer's Pack"]
+multi_class_requirements = Array[ExtResource("2_lnbn2")]([])
+flavor_text = "A spellcaster born with innate magical power, harnessed through force of will."
+
+[sub_resource type="Resource" id="c11"]
+script = ExtResource("1")
+name = "Warlock"
+required_stat = "Charisma"
+hit_die = 8
+proficiencies = Array[ExtResource("3_oc21v")]([])
+saving_throws = Array[ExtResource("4_x7krh")]([])
+skills = Array[ExtResource("2_lnbn2")]([])
+equipment = ["Simple Weapon", "Leather Armor", "Arcane Focus", "Explorer's Pack"]
+multi_class_requirements = Array[ExtResource("2_lnbn2")]([])
+flavor_text = "A spellcaster who draws power from a pact with a mysterious otherworldly being."
+
+[sub_resource type="Resource" id="c12"]
+script = ExtResource("1")
+name = "Wizard"
+required_stat = "Intelligence"
+hit_die = 6
+proficiencies = Array[ExtResource("3_oc21v")]([])
+saving_throws = Array[ExtResource("4_x7krh")]([])
+skills = Array[ExtResource("2_lnbn2")]([])
+equipment = ["Spellbook", "Component Pouch", "Dungeoneer's Pack"]
+multi_class_requirements = Array[ExtResource("2_lnbn2")]([])
+flavor_text = "A scholarly magic user, who uses arcane knowledge to cast powerful spells."
+
+[sub_resource type="Resource" id="r1"]
+script = ExtResource("3")
+name = "Dwarf"
+creature_type = 0
+size = 0
+speed = 25
+racial_traits = ["Darkvision", "Dwarven Resilience", "Stonecunning", "Tool Proficiency"]
+
+[sub_resource type="Resource" id="r2"]
+script = ExtResource("3")
+name = "Elf"
+creature_type = 0
+size = 0
+speed = 30
+racial_traits = ["Darkvision", "Keen Senses", "Fey Ancestry", "Trance"]
+
+[sub_resource type="Resource" id="r3"]
+script = ExtResource("3")
+name = "Halfling"
+creature_type = 0
+size = 2
+speed = 25
+racial_traits = ["Lucky", "Brave", "Halfling Nimbleness"]
+
+[sub_resource type="Resource" id="r4"]
+script = ExtResource("3")
+name = "Human"
+creature_type = 0
+size = 0
+speed = 30
+racial_traits = ["Versatile", "Extra Language"]
+
+[sub_resource type="Resource" id="r5"]
+script = ExtResource("3")
+name = "Dragonborn"
+creature_type = 0
+size = 0
+speed = 30
+racial_traits = ["Draconic Ancestry", "Breath Weapon", "Damage Resistance"]
+
+[sub_resource type="Resource" id="r6"]
+script = ExtResource("3")
+name = "Gnome"
+creature_type = 0
+size = 2
+speed = 25
+racial_traits = ["Darkvision", "Gnome Cunning"]
+
+[sub_resource type="Resource" id="r7"]
+script = ExtResource("3")
+name = "Half-Elf"
+creature_type = 0
+size = 0
+speed = 30
+racial_traits = ["Darkvision", "Fey Ancestry", "Skill Versatility"]
+
+[sub_resource type="Resource" id="r8"]
+script = ExtResource("3")
+name = "Half-Orc"
+creature_type = 0
+size = 0
+speed = 30
+racial_traits = ["Darkvision", "Relentless Endurance", "Savage Attacks"]
+
+[sub_resource type="Resource" id="r9"]
+script = ExtResource("3")
+name = "Tiefling"
+creature_type = 0
+size = 0
+speed = 30
+racial_traits = ["Darkvision", "Hellish Resistance", "Infernal Legacy"]
+
+[resource]
+script = ExtResource("2")
+races = Array[ExtResource("3")]([SubResource("r1"), SubResource("r2"), SubResource("r3"), SubResource("r4"), SubResource("r5"), SubResource("r6"), SubResource("r7"), SubResource("r8"), SubResource("r9")])
+classes = Array[ExtResource("1")]([SubResource("c1"), SubResource("c2"), SubResource("c3"), SubResource("c4"), SubResource("c5"), SubResource("c6"), SubResource("c7"), SubResource("c8"), SubResource("c9"), SubResource("c10"), SubResource("c11"), SubResource("c12")])

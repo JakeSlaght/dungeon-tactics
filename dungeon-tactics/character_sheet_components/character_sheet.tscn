@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://dtoe4ghreh13a"]
+
+[ext_resource type="Script" uid="uid://qkfaubruvbpy" path="res://character_sheet_components/character_sheet.gd" id="1_m4dgl"]
+[ext_resource type="PackedScene" uid="uid://vlhygmbp4naf" path="res://character_sheet_components/basic_information.tscn" id="2_22c3q"]
+[ext_resource type="PackedScene" uid="uid://g8haith7212p" path="res://character_sheet_components/stat_column.tscn" id="3_v3fq8"]
+[ext_resource type="PackedScene" uid="uid://dhmvp74d5du6v" path="res://character_sheet_components/level_racial_attributes.tscn" id="4_mt7e1"]
+
+[node name="Character_Sheet" type="Node"]
+script = ExtResource("1_m4dgl")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Basic_Information" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_22c3q")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Stat_Column" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("3_v3fq8")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Level_Racial_Attributes" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("4_mt7e1")]
+layout_mode = 2

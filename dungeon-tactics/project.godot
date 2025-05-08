@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="dungeon-tactics"
-run/main_scene="res://resource_files/character_sheet.tscn"
+run/main_scene="res://character_sheet_components/character_sheet.tscn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+CONSTANTS="*res://resource_files/constants.gd"
+Loader="*res://singletons/loader.gd"
 
 [global_group]
 

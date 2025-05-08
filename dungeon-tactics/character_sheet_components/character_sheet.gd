@@ -2,9 +2,11 @@ class_name CharacterSheet extends Node
 @onready var stat_column: StatColumn = %Stat_Column
 
 func _ready() -> void:
+	#Loader.save()
+	Loader.load()
 	# We are just filling this out for pure basic setup...
 	# Going to use a standard array: 15, 14, 13, 12, 10, 8
-	var attribute_data = {
+	var attribute_data = {	
 		'strength': 15,
 		'dexterity':14,
 		'constitution':13,

@@ -1,10 +1,6 @@
 class_name CharacterCreation extends Node
 @onready var option_description: Label = %option_description
-@onready var _4d_6_box: HBoxContainer = %"4d6_box"
-@onready var standard_array_box: HBoxContainer = %standard_array_box
 @onready var point_buy_box: HBoxContainer = %point_buy_box
-
-
 
 enum OPTION {
 	STANDARD,
@@ -19,7 +15,7 @@ func _on_btn_standard_array_pressed() -> void:
 	option_chosen = OPTION.STANDARD
 
 func _on_btn_four_dice_pressed() -> void:
-	option_description.text = 'roll four six-sided dice, then add the three highest numbers rolled together. This process is repeated six times to generate six ability scores, which are then assigned to the character\'s Strength, Dexterity, Constitution, Intelligence, Wisdom, and Charisma.'
+	option_description.text = 'roll four random numbers between 1 and 6f, then add the three highest numbers rolled together. This process is repeated six times to generate six ability scores, which are then assigned to the character\'s Strength, Dexterity, Constitution, Intelligence, Wisdom, and Charisma.'
 	option_chosen = OPTION.LOWEST_OUT
 
 func _on_btn_point_buy_pressed() -> void:
@@ -27,30 +23,57 @@ func _on_btn_point_buy_pressed() -> void:
 	option_chosen = OPTION.POINT_BUY
 
 func _on_btn_roll_pressed() -> void:
-	_4d_6_box.visible = false
 	point_buy_box.visible = false
-	standard_array_box.visible = false
 	match option_chosen:
 		OPTION.LOWEST_OUT:
-			print_debug('4d6 take the lowest out')
-			_4d_6_box.visible = true
 			_roll_dice()
 		OPTION.POINT_BUY:
 			print_debug('point buy')
 			point_buy_box.visible = true
 		OPTION.STANDARD:
-			standard_array_box.visible = true
-			print_debug('standard array')
+			var rolls = {
+				'roll_1':  15,
+				'roll_2': 14,
+				'roll_3': 13,
+				'roll_4': 12,
+				'roll_5': 10,
+				'roll_6': 8
+			}
+			get_tree().call_group('lr_attributes', 'process_lr_attribute_data', rolls)
 
 func _roll_dice() -> void:
-	var die1: int = randi_range(1,6)
-	var die2: int = randi_range(1,6)
-	var die3: int = randi_range(1,6)
-	var die4: int = randi_range(1,6)
+	var rolls = {
+		'roll_1': 0,
+		'roll_2': 0,
+		'roll_3': 0,
+		'roll_4': 0,
+		'roll_5': 0,
+		'roll_6': 0
+	}
+
+	for i in range(0, 6):
+		var die1: int = randi_range(1,6)
+		var die2: int = randi_range(1,6)
+		var die3: int = randi_range(1,6)
+		var die4: int = randi_range(1,6)
+		var dice: Array[int] = [die1, die2, die3, die4]
+		print_debug(i)
+		var roll_string = 'roll_%s' %[i+1]
+		rolls[roll_string] = _remove_lowest(dice)
 	
-	print_debug(die1, die2, die3, die4)
+	get_tree().call_group('lr_attributes', 'process_lr_attribute_data', rolls)
+
+func _remove_lowest(dice) -> int:
+	var lowest = dice[0]
+	for i in range(1, len(dice)):
+		if dice[i] < lowest:
+			lowest = dice[i]
 	
-	_4d_6_box.get_node("die1_value").text = str(die1)
-	_4d_6_box.get_node("die2_value").text = str(die2)
-	_4d_6_box.get_node("die3_value").text = str(die3)
-	_4d_6_box.get_node("die4_value").text = str(die4)
+	var index_to_remove: int = dice.find(lowest)
+	var sum: int = 0
+	
+	for i in range(len(dice)):
+		if i != index_to_remove:
+			sum += dice[i]
+	
+	return sum

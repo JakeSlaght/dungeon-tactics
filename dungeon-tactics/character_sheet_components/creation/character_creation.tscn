@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://jgepwrqw3ypy"]
+[gd_scene load_steps=3 format=3 uid="uid://jgepwrqw3ypy"]
 
 [ext_resource type="Script" uid="uid://btcwhbgmm7gkb" path="res://character_sheet_components/creation/character_creation.gd" id="1_4pc4v"]
+[ext_resource type="PackedScene" uid="uid://bc80e3lhwkyo1" path="res://character_sheet_components/create_attribute_bar.tscn" id="2_42m3a"]
 
 [node name="Character_Creation" type="Control"]
 layout_mode = 3
@@ -45,7 +46,7 @@ text = "Standard Array"
 
 [node name="btn_four_dice" type="Button" parent="VBoxContainer/stat_generation/roll_options"]
 layout_mode = 2
-text = "4d6"
+text = "Random"
 
 [node name="btn_point_buy" type="Button" parent="VBoxContainer/stat_generation/roll_options"]
 layout_mode = 2
@@ -60,26 +61,7 @@ autowrap_mode = 3
 layout_mode = 2
 text = "Generate Stats"
 
-[node name="4d6_box" type="HBoxContainer" parent="VBoxContainer/stat_generation"]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-
-[node name="die1_value" type="Label" parent="VBoxContainer/stat_generation/4d6_box"]
-layout_mode = 2
-
-[node name="die2_value" type="Label" parent="VBoxContainer/stat_generation/4d6_box"]
-layout_mode = 2
-
-[node name="die3_value" type="Label" parent="VBoxContainer/stat_generation/4d6_box"]
-layout_mode = 2
-
-[node name="die4_value" type="Label" parent="VBoxContainer/stat_generation/4d6_box"]
-layout_mode = 2
-
-[node name="standard_array_box" type="HBoxContainer" parent="VBoxContainer/stat_generation"]
-unique_name_in_owner = true
-visible = false
+[node name="attributes_bar" parent="VBoxContainer/stat_generation" instance=ExtResource("2_42m3a")]
 layout_mode = 2
 
 [node name="point_buy_box" type="HBoxContainer" parent="VBoxContainer/stat_generation"]

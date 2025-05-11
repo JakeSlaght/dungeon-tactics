@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dpgsy0vx8oce6"]
+[gd_scene load_steps=5 format=3 uid="uid://dpgsy0vx8oce6"]
 
 [ext_resource type="Texture2D" uid="uid://c58drm7k57w3v" path="res://images/stat_attribute_9rect.png" id="1_5ttdo"]
 [ext_resource type="Script" uid="uid://cqr24254htbji" path="res://character_sheet_components/lr_attribute.gd" id="2_mucuu"]
+[ext_resource type="Texture2D" uid="uid://dfpghccit1f2f" path="res://images/minus_button.png" id="3_f004l"]
+[ext_resource type="Texture2D" uid="uid://cni1yt8n22t5r" path="res://images/plus_button.png" id="4_qehtb"]
 
 [node name="LRAttribute" type="NinePatchRect" groups=["lr_attributes"]]
 custom_minimum_size = Vector2(100, 110)
@@ -29,14 +31,13 @@ alignment = 1
 
 [node name="attribute_name" type="Label" parent="MarginContainer/Vertical_Box"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 14
 text = "Proficiency Bonus"
 horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="attribute_modifer" type="Label" parent="MarginContainer/Vertical_Box"]
@@ -58,3 +59,25 @@ text = "Feet"
 horizontal_alignment = 1
 vertical_alignment = 1
 justification_flags = 0
+
+[node name="minus_button" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = -8.0
+offset_top = 45.0
+offset_right = 16.0
+offset_bottom = 69.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("3_f004l")
+
+[node name="plus_button" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 85.0
+offset_top = 45.0
+offset_right = 109.0
+offset_bottom = 69.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("4_qehtb")

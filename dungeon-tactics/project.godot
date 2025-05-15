@@ -19,6 +19,8 @@ config/icon="res://icon.svg"
 
 CONSTANTS="*res://resource_files/constants.gd"
 Loader="*res://singletons/loader.gd"
+Events="*res://singletons/events.gd"
+GameDetails="*res://singletons/game_details.gd"
 
 [global_group]
 

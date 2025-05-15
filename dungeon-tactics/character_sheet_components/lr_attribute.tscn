@@ -18,14 +18,22 @@ script = ExtResource("2_mucuu")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_left = -5.0
-offset_top = -5.0
-offset_right = 103.0
-offset_bottom = 117.0
+offset_left = -8.0
+offset_top = -1.0
+offset_right = 107.0
+offset_bottom = 111.0
+
+[node name="minus_button" type="TextureButton" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture_normal = ExtResource("3_f004l")
 
 [node name="Vertical_Box" type="VBoxContainer" parent="MarginContainer"]
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/separation = 0
 alignment = 1
 
@@ -60,24 +68,12 @@ horizontal_alignment = 1
 vertical_alignment = 1
 justification_flags = 0
 
-[node name="minus_button" type="TextureButton" parent="."]
+[node name="plus_button" type="TextureButton" parent="MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-offset_left = -8.0
-offset_top = 45.0
-offset_right = 16.0
-offset_bottom = 69.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture_normal = ExtResource("3_f004l")
-
-[node name="plus_button" type="TextureButton" parent="."]
-unique_name_in_owner = true
-layout_mode = 2
-offset_left = 85.0
-offset_top = 45.0
-offset_right = 109.0
-offset_bottom = 69.0
-size_flags_horizontal = 4
+size_flags_horizontal = 8
 size_flags_vertical = 4
 texture_normal = ExtResource("4_qehtb")
+
+[connection signal="pressed" from="MarginContainer/minus_button" to="." method="_on_minus_button_pressed"]
+[connection signal="pressed" from="MarginContainer/plus_button" to="." method="_on_plus_button_pressed"]

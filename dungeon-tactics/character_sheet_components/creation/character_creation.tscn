@@ -62,11 +62,80 @@ layout_mode = 2
 text = "Generate Stats"
 
 [node name="attributes_bar" parent="VBoxContainer/stat_generation" instance=ExtResource("2_42m3a")]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="point_buy_box" type="HBoxContainer" parent="VBoxContainer/stat_generation"]
 unique_name_in_owner = true
-visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/stat_generation/point_buy_box"]
+layout_mode = 2
+text = "Points:"
+
+[node name="remaining_points" type="Label" parent="VBoxContainer/stat_generation/point_buy_box"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="total_points" type="Label" parent="VBoxContainer/stat_generation/point_buy_box"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="class_selection" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/class_selection"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/class_selection/HBoxContainer"]
+layout_mode = 2
+text = "Class: "
+
+[node name="class_options" type="OptionButton" parent="VBoxContainer/class_selection/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/class_selection"]
+layout_mode = 2
+
+[node name="flavor" type="Label" parent="VBoxContainer/class_selection/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/class_selection/VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="skill_req_label" type="Label" parent="VBoxContainer/class_selection/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Required Skill:"
+
+[node name="skill_requirements" type="Label" parent="VBoxContainer/class_selection/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="mc_req_label" type="Label" parent="VBoxContainer/class_selection/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Multiclass Requirements:"
+
+[node name="mc_skill_requirements" type="Label" parent="VBoxContainer/class_selection/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Dex, Con"
+
+[node name="saving_throws_label" type="Label" parent="VBoxContainer/class_selection/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="saving_throws" type="Label" parent="VBoxContainer/class_selection/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="profiency_label" type="Label" parent="VBoxContainer/class_selection/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Proficiencies"
+
+[node name="profiencies" type="Label" parent="VBoxContainer/class_selection/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 
 [connection signal="pressed" from="VBoxContainer/stat_generation/roll_options/btn_standard_array" to="." method="_on_btn_standard_array_pressed"]

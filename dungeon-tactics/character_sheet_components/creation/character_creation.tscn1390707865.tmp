@@ -1,0 +1,144 @@
+[gd_scene load_steps=3 format=3 uid="uid://jgepwrqw3ypy"]
+
+[ext_resource type="Script" uid="uid://btcwhbgmm7gkb" path="res://character_sheet_components/creation/character_creation.gd" id="1_4pc4v"]
+[ext_resource type="PackedScene" uid="uid://bc80e3lhwkyo1" path="res://character_sheet_components/create_attribute_bar.tscn" id="2_42m3a"]
+
+[node name="Character_Creation" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4pc4v")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Character Name:"
+
+[node name="name_input" type="LineEdit" parent="VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+max_length = 350
+
+[node name="stat_generation" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/stat_generation"]
+layout_mode = 2
+text = "How To Determine Stats"
+
+[node name="roll_options" type="HBoxContainer" parent="VBoxContainer/stat_generation"]
+layout_mode = 2
+
+[node name="btn_standard_array" type="Button" parent="VBoxContainer/stat_generation/roll_options"]
+layout_mode = 2
+text = "Standard Array"
+
+[node name="btn_four_dice" type="Button" parent="VBoxContainer/stat_generation/roll_options"]
+layout_mode = 2
+text = "Random"
+
+[node name="btn_point_buy" type="Button" parent="VBoxContainer/stat_generation/roll_options"]
+layout_mode = 2
+text = "Point Buy"
+
+[node name="option_description" type="Label" parent="VBoxContainer/stat_generation"]
+unique_name_in_owner = true
+layout_mode = 2
+autowrap_mode = 3
+
+[node name="btn_roll" type="Button" parent="VBoxContainer/stat_generation"]
+layout_mode = 2
+text = "Generate Stats"
+
+[node name="attributes_bar" parent="VBoxContainer/stat_generation" instance=ExtResource("2_42m3a")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="point_buy_box" type="HBoxContainer" parent="VBoxContainer/stat_generation"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/stat_generation/point_buy_box"]
+layout_mode = 2
+text = "Points:"
+
+[node name="remaining_points" type="Label" parent="VBoxContainer/stat_generation/point_buy_box"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="total_points" type="Label" parent="VBoxContainer/stat_generation/point_buy_box"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="class_selection" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/class_selection"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/class_selection/HBoxContainer"]
+layout_mode = 2
+text = "Class: "
+
+[node name="class_options" type="OptionButton" parent="VBoxContainer/class_selection/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/class_selection"]
+layout_mode = 2
+
+[node name="flavor" type="Label" parent="VBoxContainer/class_selection/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/class_selection/VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="skill_req_label" type="Label" parent="VBoxContainer/class_selection/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Required Skill:"
+
+[node name="skill_requirements" type="Label" parent="VBoxContainer/class_selection/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="mc_req_label" type="Label" parent="VBoxContainer/class_selection/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Multiclass Requirements:"
+
+[node name="mc_skill_requirements" type="Label" parent="VBoxContainer/class_selection/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Dex, Con"
+
+[node name="saving_throws_label" type="Label" parent="VBoxContainer/class_selection/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="saving_throws" type="Label" parent="VBoxContainer/class_selection/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="profiency_label" type="Label" parent="VBoxContainer/class_selection/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Proficiencies"
+
+[node name="profiencies" type="Label" parent="VBoxContainer/class_selection/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[connection signal="pressed" from="VBoxContainer/stat_generation/roll_options/btn_standard_array" to="." method="_on_btn_standard_array_pressed"]
+[connection signal="pressed" from="VBoxContainer/stat_generation/roll_options/btn_four_dice" to="." method="_on_btn_four_dice_pressed"]
+[connection signal="pressed" from="VBoxContainer/stat_generation/roll_options/btn_point_buy" to="." method="_on_btn_point_buy_pressed"]
+[connection signal="pressed" from="VBoxContainer/stat_generation/btn_roll" to="." method="_on_btn_roll_pressed"]

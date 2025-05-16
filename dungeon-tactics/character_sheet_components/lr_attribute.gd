@@ -13,16 +13,16 @@ class_name LRAttribute extends NinePatchRect
 
 func _ready() -> void:
    if attribute:
-      attribute_name.text = attribute
-      attribute_modifer_label.visible = toggle_modifier_label
-      minus_button.visible = false
-      plus_button.visible = false
+	  attribute_name.text = attribute
+	  attribute_modifer_label.visible = toggle_modifier_label
+	  minus_button.visible = false
+	  plus_button.visible = false
 
 func process_lr_attribute_data(data) -> void:
    if data[attribute_key.to_lower()]:
-      var attribute_value = data[attribute_key.to_lower()]
-      attribute_modifer.set_text(str(attribute_value))
-      #_calculate_modifier()
+	  var attribute_value = data[attribute_key.to_lower()]
+	  attribute_modifer.set_text(str(attribute_value))
+	  #_calculate_modifier()
 
 func process_plus_minus_toggle(toggle_bool) -> void:
    minus_button.visible = toggle_bool['minus']
@@ -38,16 +38,16 @@ func _on_minus_button_pressed() -> void:
    var attribute_modifer_value = int(attribute_modifer.get_text())
    print_debug(attribute_modifer_value)
    if attribute_modifer_value > 8:
-      Events.plus_minus_roll_trigger.emit('minus', attribute_key)
-      print_debug('we are able to go ABOVE 8')
+	  Events.plus_minus_roll_trigger.emit('minus', attribute_key)
+	  print_debug('we are able to go ABOVE 8')
    else:
-      print_debug('we are at 8....')
+	  print_debug('we are at 8....')
 
 
 func _on_plus_button_pressed() -> void:
    var attribute_modifer_value = int(attribute_modifer.get_text())
    if attribute_modifer_value < 15:
-      Events.plus_minus_roll_trigger.emit('plus', attribute_key)
-      print_debug('we are able to go BELOW 15')
+	  Events.plus_minus_roll_trigger.emit('plus', attribute_key)
+	  print_debug('we are able to go BELOW 15')
    else:
-      print_debug('we are at 15....')
+	  print_debug('we are at 15....')

@@ -15,16 +15,16 @@ func ready() -> void:
 
 func process_attribute_data(data) -> void:
    if data[attribute.to_lower()]:
-      attribute_value = data[attribute.to_lower()]
-      attribute_input.set_text(str(attribute_value))
-      _calculate_modifier()
+	  attribute_value = data[attribute.to_lower()]
+	  attribute_input.set_text(str(attribute_value))
+	  _calculate_modifier()
 
 func _calculate_modifier() -> void:
    var calculation = floor((attribute_value - 10)/2)
 
    if calculation > 0:
-      attribute_modifer_value = '+%s'%calculation
+	  attribute_modifer_value = '+%s'%calculation
    else:
-      attribute_modifer_value = str(calculation)
+	  attribute_modifer_value = str(calculation)
    
    attribute_modifer.set_text(attribute_modifer_value)

@@ -37,3 +37,9 @@ enum Creature_Type {
    PLANT,
    UNDEAD
 }
+
+enum Class_Type {
+	MELEE,
+	SPELLCASTER,
+	SUPPORT
+}

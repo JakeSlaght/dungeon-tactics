@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://jgepwrqw3ypy"]
+[gd_scene load_steps=5 format=3 uid="uid://jgepwrqw3ypy"]
 
 [ext_resource type="Script" uid="uid://btcwhbgmm7gkb" path="res://character_sheet_components/creation/character_creation.gd" id="1_4pc4v"]
 [ext_resource type="PackedScene" uid="uid://bc80e3lhwkyo1" path="res://character_sheet_components/create_attribute_bar.tscn" id="2_42m3a"]
+[ext_resource type="Texture2D" uid="uid://gv4yath7qju2" path="res://images/stat_column_9rect.png" id="2_88mhq"]
+[ext_resource type="Texture2D" uid="uid://dc7ar5ld0xjj8" path="res://images/stat_column_9rect_hover.png" id="3_88mhq"]
 
 [node name="Character_Creation" type="Control"]
 layout_mode = 3
@@ -18,6 +20,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+visible = false
 layout_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2"]
@@ -40,26 +43,137 @@ text = "How To Determine Stats"
 [node name="roll_options" type="HBoxContainer" parent="VBoxContainer/stat_generation"]
 layout_mode = 2
 
-[node name="btn_standard_array" type="Button" parent="VBoxContainer/stat_generation/roll_options"]
+[node name="btn_easy" type="TextureButton" parent="VBoxContainer/stat_generation/roll_options"]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
-text = "Standard Array"
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_88mhq")
+texture_pressed = ExtResource("3_88mhq")
+texture_hover = ExtResource("3_88mhq")
+stretch_mode = 4
 
-[node name="btn_four_dice" type="Button" parent="VBoxContainer/stat_generation/roll_options"]
-layout_mode = 2
-text = "Random"
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/stat_generation/roll_options/btn_easy"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -38.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 
-[node name="btn_point_buy" type="Button" parent="VBoxContainer/stat_generation/roll_options"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/stat_generation/roll_options/btn_easy/MarginContainer"]
 layout_mode = 2
-text = "Point Buy"
 
-[node name="option_description" type="Label" parent="VBoxContainer/stat_generation"]
-unique_name_in_owner = true
+[node name="Label" type="Label" parent="VBoxContainer/stat_generation/roll_options/btn_easy/MarginContainer/VBoxContainer"]
 layout_mode = 2
-autowrap_mode = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Easy"
+horizontal_alignment = 1
 
-[node name="btn_roll" type="Button" parent="VBoxContainer/stat_generation"]
+[node name="Label2" type="Label" parent="VBoxContainer/stat_generation/roll_options/btn_easy/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Generate Stats"
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "Start with 15, 14, 13, 12, 10, and 8"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="btn_standard" type="TextureButton" parent="VBoxContainer/stat_generation/roll_options"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_88mhq")
+texture_pressed = ExtResource("3_88mhq")
+texture_hover = ExtResource("3_88mhq")
+stretch_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/stat_generation/roll_options/btn_standard"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -38.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/stat_generation/roll_options/btn_standard/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/stat_generation/roll_options/btn_standard/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Standard"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/stat_generation/roll_options/btn_standard/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "Randomly get three numbers between 3 and 18"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="btn_advanced" type="TextureButton" parent="VBoxContainer/stat_generation/roll_options"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_88mhq")
+texture_pressed = ExtResource("3_88mhq")
+texture_hover = ExtResource("3_88mhq")
+stretch_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/stat_generation/roll_options/btn_advanced"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -38.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/stat_generation/roll_options/btn_advanced/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/stat_generation/roll_options/btn_advanced/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Advanced"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/stat_generation/roll_options/btn_advanced/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "All stats start at 8 you get 27 points to distribute between. Cannot go higher than 15 or lower than 8"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="attributes_bar" parent="VBoxContainer/stat_generation" instance=ExtResource("2_42m3a")]
 unique_name_in_owner = true
@@ -82,6 +196,7 @@ unique_name_in_owner = true
 layout_mode = 2
 
 [node name="class_selection" type="VBoxContainer" parent="VBoxContainer"]
+visible = false
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/class_selection"]
@@ -138,7 +253,6 @@ text = "Proficiencies"
 unique_name_in_owner = true
 layout_mode = 2
 
-[connection signal="pressed" from="VBoxContainer/stat_generation/roll_options/btn_standard_array" to="." method="_on_btn_standard_array_pressed"]
-[connection signal="pressed" from="VBoxContainer/stat_generation/roll_options/btn_four_dice" to="." method="_on_btn_four_dice_pressed"]
-[connection signal="pressed" from="VBoxContainer/stat_generation/roll_options/btn_point_buy" to="." method="_on_btn_point_buy_pressed"]
-[connection signal="pressed" from="VBoxContainer/stat_generation/btn_roll" to="." method="_on_btn_roll_pressed"]
+[connection signal="pressed" from="VBoxContainer/stat_generation/roll_options/btn_easy" to="." method="_on_btn_easy_pressed"]
+[connection signal="pressed" from="VBoxContainer/stat_generation/roll_options/btn_standard" to="." method="_on_btn_standard_pressed"]
+[connection signal="pressed" from="VBoxContainer/stat_generation/roll_options/btn_advanced" to="." method="_on_btn_advanced_pressed"]

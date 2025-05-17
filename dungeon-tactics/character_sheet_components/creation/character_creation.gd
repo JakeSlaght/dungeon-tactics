@@ -80,7 +80,8 @@ func _roll_selection() -> void:
 			'roll_5': 10,
 			'roll_6': 8
 			}
-			get_tree().call_group('lr_attributes', 'process_lr_attribute_data', rolls)
+
+	get_tree().call_group('lr_attributes', 'process_lr_attribute_data', rolls)
 
 func _roll_dice() -> void:
 	rolls = {

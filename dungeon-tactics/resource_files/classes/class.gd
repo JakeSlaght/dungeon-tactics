@@ -10,3 +10,4 @@ class_name Class extends Resource
 @export var equipment: Array #starting equipment based on class
 @export var multi_class_requirements: Array[Skill]
 @export var flavor_text: String
+@export var class_type: CONSTANTS.Class_Type

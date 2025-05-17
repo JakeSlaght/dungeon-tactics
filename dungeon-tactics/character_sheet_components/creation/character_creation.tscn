@@ -15,13 +15,16 @@ grow_vertical = 2
 script = ExtResource("1_4pc4v")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
-visible = false
 layout_mode = 2
+size_flags_horizontal = 4
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2"]
 layout_mode = 2
@@ -37,11 +40,14 @@ max_length = 350
 layout_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/stat_generation"]
+visible = false
 layout_mode = 2
 text = "How To Determine Stats"
 
 [node name="roll_options" type="HBoxContainer" parent="VBoxContainer/stat_generation"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="btn_easy" type="TextureButton" parent="VBoxContainer/stat_generation/roll_options"]
 custom_minimum_size = Vector2(150, 150)
@@ -196,8 +202,143 @@ unique_name_in_owner = true
 layout_mode = 2
 
 [node name="class_selection" type="VBoxContainer" parent="VBoxContainer"]
-visible = false
 layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="roll_options" type="HBoxContainer" parent="VBoxContainer/class_selection"]
+layout_mode = 2
+
+[node name="btn_melee" type="TextureButton" parent="VBoxContainer/class_selection/roll_options"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_88mhq")
+texture_pressed = ExtResource("3_88mhq")
+texture_hover = ExtResource("3_88mhq")
+stretch_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/class_selection/roll_options/btn_melee"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -38.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/class_selection/roll_options/btn_melee/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/class_selection/roll_options/btn_melee/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Melee"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/class_selection/roll_options/btn_melee/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "Physical attacking classes. Typically front line"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="btn_spellcaster" type="TextureButton" parent="VBoxContainer/class_selection/roll_options"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_88mhq")
+texture_pressed = ExtResource("3_88mhq")
+texture_hover = ExtResource("3_88mhq")
+stretch_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/class_selection/roll_options/btn_spellcaster"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -38.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/class_selection/roll_options/btn_spellcaster/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/class_selection/roll_options/btn_spellcaster/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Spellcasters"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/class_selection/roll_options/btn_spellcaster/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "Magic Users. Lower in Health typically found in the back"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="btn_support" type="TextureButton" parent="VBoxContainer/class_selection/roll_options"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_88mhq")
+texture_pressed = ExtResource("3_88mhq")
+texture_hover = ExtResource("3_88mhq")
+stretch_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/class_selection/roll_options/btn_support"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -38.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/class_selection/roll_options/btn_support/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/class_selection/roll_options/btn_support/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Support"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/class_selection/roll_options/btn_support/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "Classes that are not strictly Melee or Spellcasters"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/class_selection"]
 layout_mode = 2
@@ -218,6 +359,7 @@ unique_name_in_owner = true
 layout_mode = 2
 
 [node name="GridContainer" type="GridContainer" parent="VBoxContainer/class_selection/VBoxContainer"]
+visible = false
 layout_mode = 2
 columns = 2
 
@@ -256,3 +398,6 @@ layout_mode = 2
 [connection signal="pressed" from="VBoxContainer/stat_generation/roll_options/btn_easy" to="." method="_on_btn_easy_pressed"]
 [connection signal="pressed" from="VBoxContainer/stat_generation/roll_options/btn_standard" to="." method="_on_btn_standard_pressed"]
 [connection signal="pressed" from="VBoxContainer/stat_generation/roll_options/btn_advanced" to="." method="_on_btn_advanced_pressed"]
+[connection signal="pressed" from="VBoxContainer/class_selection/roll_options/btn_melee" to="." method="_on_btn_melee_pressed"]
+[connection signal="pressed" from="VBoxContainer/class_selection/roll_options/btn_spellcaster" to="." method="_on_btn_spellcaster_pressed"]
+[connection signal="pressed" from="VBoxContainer/class_selection/roll_options/btn_support" to="." method="_on_btn_support_pressed"]

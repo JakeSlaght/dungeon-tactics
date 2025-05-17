@@ -26,6 +26,7 @@ GameDetails="*res://singletons/game_details.gd"
 
 attributes="Character Attributes"
 lr_attributes=""
+create_stat_blocks=""
 
 [rendering]
 
